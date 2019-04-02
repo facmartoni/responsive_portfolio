@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Facundo García Martoni</title>
+    <link rel="icon" type="" href="">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Source+Sans+Pro" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <i class="icon-menu burger_button" id="burger_button"></i>
+
+    <!-- Cabecera -->
+
+    <header class="header">
+        <div class="container header">
+            <div>
+                <figure class="logo">
+                    <img src="images/logo.png" alt="Logo de Facundo Nicolás García Martoni" width="100"> 
+                </figure>
+            </div>
+                <nav class="menu">
+                    <ol>
+                        <li>
+                            <a class="link" href="#portafolio">Portafolio</a>
+                        </li>
+                        <li>
+                            <a class="link" href="#eventos_titulo">Educación</a>
+                        </li>
+                        <li>
+                            <a class="link" href="#contacto">Contactame</a>
+                        </li>
+                    </ol>
+                </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero">
+        <div class="container">
+            <h1>
+            Hola! Soy <strong>Facundo García</strong>, <br/> <strong>desarrollador</strong> móvil con <br/> pasión por la <strong>Innovación</strong>
+            </h1>
+            <img class="hero_image" src="images/hero.jpg" alt="Imagen personal principal">    
+        </div>
+    </section>
+
+    <!-- Portafolio -->
+
+    <section id="portafolio" class="portfolio">
+        <div class="container">
+            <h2>Portafolio</h2>
+            <article class="project">
+                <div class="project_details">
+                    <h3 class="project_title">Platzi Video</h3>
+                    <h6 class="project_course">React Native / React</h6>
+                    <p class="project_date"><small><strong>Fecha</strong>: 01/07/2018</small></p>
+                    <p class="project_url"><small><strong>Puedes verlo en</strong>: www.platzi.com</small></p>
+                    <p class="project_description">Platzi Video fue el resultado de 3 meses de trabajo para crear la mejor app para enseñar el funcionamiento de React y React Native. Desde crear un vista-detalle, hasta patrones avanzados de navegación, este proyecto ha sido el ejemplo de futuros creadores de aplicaciones multiplataforma.</p>
+                    <p></p>
+                </div>
+                <figure class="project_container">
+                    <img class="project_image" src="/images/platzi-video-react-native.png" alt="Imagen de proyecto">
+                </figure>
+            </article>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+
+    <div class="container">
+        <h2 class="event_head" id="eventos_titulo">Más sobre mi experiencia</h2>
+    </div>
+    <section id="eventos" class="event_list">
+        <div class="container">
+            <article class="event">
+                    <figure class="event_container">
+                        <video class="html_video" src="https://github.com/LeonidasEsteban/responsive-design-portafolio/blob/master/videos/f8.mp4?raw=true" width="1280" height="720" controls></video>
+                        <!-- <img class="event_image" src="/images/platzi-conf.jpg" alt="Imagen de evento"> -->
+                    </figure>
+                    <div class="event_detail">
+                        <h3 class="event_title">PlatziConf México 2018</h3>
+                        <p class="event_description">El evento más grande sobre gente que quiere aprender más de internet. En este evento te comparto cómo tener una vida de constante aprendizaje.</p>
+                        <a class="event_url" href="youtube_link">Ver video</a>
+                    </div>
+                </article>
+            <article class="event">
+                <figure class="event_container">
+                    <div class="flexible_video">
+                            <iframe class="youtube_video" width="560" height="315" src="https://www.youtube.com/embed/PWcwdHMyT3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>                
+                </figure>
+                <div class="event_detail">
+                    <h3 class="event_title">PlatziConf México 2018</h3>
+                    <p class="event_description">El evento más grande sobre gente que quiere aprender más de internet. En este evento te comparto cómo tener una vida de constante aprendizaje.</p>
+                    <a class="event_url" href="youtube_link">Ver video</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    
+    <section class="contact" id="contacto">
+        <div class="container">
+            <form class="form_email" action="/suscripcion">
+                <h3>¿Creamos algo juntos?</h3>
+                <input type="text" placeholder="Dejame tu email" id="email">
+                <button>Enviar</button>
+            </form>
+            <div class="social">
+                <i class="icon-linkedin"></i>
+                <i class="icon-github"></i>
+                <i class="icon-facebook"></i>
+                <i class="icon-instagram"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <p>
+                    Curso de Desarrollo Web Online 2019 <img src="images/platzi.png" alt="Platzi_logo" width="80px">
+                </p>
+            </div>
+            <div>
+                <p>
+                    Designed with ❤ by <a href="https://www.twitter.com/thespianartist">@thespianartist</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector(".menu");
+        const burgerButton = document.querySelector("#burger_button");
+        const ipad = window.matchMedia("screen and (max-width: 767px)");
+        const links = document.querySelectorAll(".link");
+
+        ipad.addListener(validation);
+
+        function validation(event){
+           if(event.matches){
+                burgerButton.addEventListener("click", showHide);
+                Array.from(links).forEach( link=> { 
+                link.addEventListener("click", showHide)
+                });
+            }
+            else{
+                burgerButton.removeEventListener("click", showHide);
+           }
+        }
+
+        validation(ipad);
+
+        function showHide(){
+            if (menu.classList.contains("is_active")){
+                menu.classList.remove("is_active");
+            }
+            else{
+                menu.classList.add("is_active");
+            }
+        }
+    </script>
+ 
+</body>
+</html>
